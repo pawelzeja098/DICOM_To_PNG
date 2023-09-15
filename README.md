@@ -12,7 +12,7 @@ All embedded images are written to the "./tmp" directory as PNG.
 
 
 Known issues:
-1.Extension of the Dicom file (.dcm) should be lowercase
+1.Extension of the Dicom file (.dcm) has to be lowercase
 
 
 
