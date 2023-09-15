@@ -1,0 +1,9 @@
+.idea
+__pycache__
+
+
+
+/.vs
+/obj
+/env
+/tmp

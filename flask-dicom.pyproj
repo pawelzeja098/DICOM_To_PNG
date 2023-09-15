@@ -1,0 +1,145 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>de5b1aa0-2ce5-408a-9866-9fc378ec1cfe</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>app.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost:5000</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>flask-dicom</Name>
+    <RootNamespace>healthy-vs-rest-app</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="README.md" />
+    <Content Include="requirements.txt" />
+    <Content Include="static\css\bootstrap-grid.css" />
+    <Content Include="static\css\bootstrap-grid.css.map" />
+    <Content Include="static\css\bootstrap-grid.min.css" />
+    <Content Include="static\css\bootstrap-grid.min.css.map" />
+    <Content Include="static\css\bootstrap-grid.rtl.css" />
+    <Content Include="static\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="static\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="static\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="static\css\bootstrap-reboot.css" />
+    <Content Include="static\css\bootstrap-reboot.css.map" />
+    <Content Include="static\css\bootstrap-reboot.min.css" />
+    <Content Include="static\css\bootstrap-reboot.min.css.map" />
+    <Content Include="static\css\bootstrap-reboot.rtl.css" />
+    <Content Include="static\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="static\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="static\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="static\css\bootstrap-utilities.css" />
+    <Content Include="static\css\bootstrap-utilities.css.map" />
+    <Content Include="static\css\bootstrap-utilities.min.css" />
+    <Content Include="static\css\bootstrap-utilities.min.css.map" />
+    <Content Include="static\css\bootstrap-utilities.rtl.css" />
+    <Content Include="static\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="static\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="static\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="static\css\bootstrap.css" />
+    <Content Include="static\css\bootstrap.css.map" />
+    <Content Include="static\css\bootstrap.min.css" />
+    <Content Include="static\css\bootstrap.min.css.map" />
+    <Content Include="static\css\bootstrap.rtl.css" />
+    <Content Include="static\css\bootstrap.rtl.css.map" />
+    <Content Include="static\css\bootstrap.rtl.min.css" />
+    <Content Include="static\css\bootstrap.rtl.min.css.map" />
+    <Content Include="static\js\app.js" />
+    <Content Include="static\js\bootstrap.bundle.js" />
+    <Content Include="static\js\bootstrap.bundle.js.map" />
+    <Content Include="static\js\bootstrap.bundle.min.js" />
+    <Content Include="static\js\bootstrap.bundle.min.js.map" />
+    <Content Include="static\js\bootstrap.esm.js" />
+    <Content Include="static\js\bootstrap.esm.js.map" />
+    <Content Include="static\js\bootstrap.esm.min.js" />
+    <Content Include="static\js\bootstrap.esm.min.js.map" />
+    <Content Include="static\js\bootstrap.js" />
+    <Content Include="static\js\bootstrap.js.map" />
+    <Content Include="static\js\bootstrap.min.js" />
+    <Content Include="static\js\bootstrap.min.js.map" />
+    <Content Include="templates\base.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="static\" />
+    <Folder Include="static\css\" />
+    <Folder Include="static\js\" />
+    <Folder Include="templates\" />
+    <Folder Include="webapi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app.py" />
+    <Compile Include="dicom_converter.py" />
+    <Compile Include="webapi\file_upload.py" />
+    <Compile Include="webapi\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.9</Version>
+      <Description>env (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

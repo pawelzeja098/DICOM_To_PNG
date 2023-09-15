@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-6">
+
+
+        <!--begin::Form-->
+        <form class="form" action="#" method="post">
+            <!--begin::Input group-->
+            <div class="fv-row">
+                <!--begin::Dropzone-->
+                <div class="dropzone" id="kt_dropzonejs_example_1">
+                    <!--begin::Message-->
+                    <div class="dz-message needsclick">
+                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span class="path2"></span></i>
+
+                        <!--begin::Info-->
+                        <div class="ms-4">
+                            <h3 class="fs-5 fw-bold text-gray-900 mb-1">Drop files here or click to upload.</h3>
+                            <span class="fs-7 fw-semibold text-gray-400">Upload up to 5 files</span>
+                        </div>
+                        <!--end::Info-->
+                    </div>
+                </div>
+                <!--end::Dropzone-->
+            </div>
+            <!--end::Input group-->
+        </form>
+        <!--end::Form-->
+
+
+
+
+        <form id="upload-form" enctype="multipart/form-data">
+            <!--<input id="filename" type="file" name="file" class="form-control" onchange="preview()" />-->
+            <!--<input type="submit" value="Upload" class="btn btn-primary mt-2" onclick="uploadFile()" />-->
+            <!--<input type="submit" value="Upload" class="btn btn-primary mt-2" />-->
+            <!--<img id="output" hidden src="" width="500" height="300" alt="Scan preview" style="border:3px solid white;vertical-align:middle;margin:25px 0px" />-->
+            <div id="file_response"></div>
+            <!--<img id="output" />-->
+            <!--<table class="table table-sm" style="vertical-align:middle;margin:50px 0px">
+        <thead>
+            <tr>
+                <th scope="col">Picture info</th>
+                <th scope="col" id="name"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">height</th>
+                <td id="ph"></td>
+                <td id="pl"></td>
+
+            </tr>
+            <tr>
+                <th scope="row">format/mode</th>
+                <td id="format"> </td>
+                <td id="mode"> </td>-->
+            <!--<td id="palette"></td>-->
+            <!--</tr>
+                <tr>
+                    <th scope="row">dpix/dpiy</th>
+                    <td id="infox"></td>
+                    <td id="infoy"></td>
+                </tr>
+            </tbody>
+        </table>-->
+
+            <script>
+                var loadFile = function (event) {
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        var output = document.getElementById('output');
+                        output.src = reader.result;
+                    };
+                    reader.readAsDataURL(event.target.files);
+                };
+            </script>
+        </form>
+
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</div>
+
+{% endblock %}
